@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dwi67-test-redis-deployment
+  labels:
+    app: dwi67-test-redis
+    username: dwi67
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dwi67-test-redis
+      username: dwi67
+      env: test
+  template:
+    metadata:
+      labels:
+        app: dwi67-test-redis
+        username: dwi67
+        env: test
+    spec:
+      containers:
+        - name: dwi67-test-redis
+          image: redis:7
+          volumeMounts:
+          - name: dwi67-test-pvc
+            mountPath: "/data"
+      volumes:
+      - name: dwi67-test-pvc
+        persistentVolumeClaim:
+          claimName: dwi67-test-pvc
