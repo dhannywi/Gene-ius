@@ -27,14 +27,6 @@ More details about the dataset used can be found in the [HGNC complete set archi
 ## Implementation
 The project uses **Python 3.8.10**, in particular **Flask 2.2.2**, **redis 4.5.1** and **Docker 20.10.12** for containerization. 
 
-Specific Python3 libraries are used:
-* `flask`
-* `json`
-* `redis`
-* `requests`
-* `pyyaml`
-* `matplotlib`
-
 ### Files
 * `Dockerfile` -- commands for building a new image
 * `docker-compose.yml` -- container application management
